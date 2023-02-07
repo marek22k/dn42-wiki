@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+nav a.current {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.crxn_logo {
+    max-width: 30%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.floating_right {
+    float: right;
+    margin-left:20px
+}
+
+#home_crxn_tile {
+    display: none;
+}

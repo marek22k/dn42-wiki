@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+    <head>{%- include head.html -%}</head>
+    
+    <body>
+
+        <header>
+            <div id="menu" class="menu">
+            {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
+            {{ sidebar | replace:'](/','](/wiki/' | markdownify }}
+            </div>
+            {%- include header.html -%}
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            {%- include footer.html -%}
+        </footer>
+
+    </body>
+
+</html>

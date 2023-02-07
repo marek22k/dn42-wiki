@@ -1,0 +1,23 @@
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-sitemap
+
+exclude: ["public/", "upstream_docs/"]
+
+defaults:
+  -
+    scope: { path: "" }
+    values:
+      layout: "page"
+
+permalink: /:path/:name
+
+
+title: dn42 wiki
+
+keywords: dn42,wiki,routing,bgp
+
+lang: "en"
+

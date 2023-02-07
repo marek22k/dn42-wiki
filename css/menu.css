@@ -1,0 +1,43 @@
+.menu {
+    position: fixed;
+    text-align: left;
+    display: block;
+    background-color: var(--accent-bg);
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 0px;
+
+    overflow: auto;
+    max-height: 80%;
+}
+
+.menu ul {
+    list-style-type: square;
+    align-items: left;
+    display: block;
+    padding-left: 40px;
+    padding-right: 0px;
+    margin: 0px;
+}
+
+.menu ul li {
+    display: list-item;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu a {
+    padding: 2px;
+    margin: 2px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .menu {
+        position: initial;
+        max-height: initial;
+    }
+    .menu ul li ul {
+        display: none;
+    }
+}

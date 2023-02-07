@@ -1,0 +1,3 @@
+[submodule "wiki"]
+	path = wiki
+	url = git@git.dn42.dev:wiki/wiki.git
