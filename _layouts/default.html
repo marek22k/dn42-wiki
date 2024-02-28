@@ -7,7 +7,7 @@
         <header>
             <div id="menu" class="menu">
             {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
-            {{ sidebar | replace:'](/','](/wiki/' | markdownify }}
+            {{ sidebar | markdownify }}
             </div>
             {%- include header.html -%}
         </header>
