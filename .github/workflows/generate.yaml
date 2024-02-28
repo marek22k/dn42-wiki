@@ -1,4 +1,4 @@
-name: Deplay wiki
+name: Deployment of the dn42 wiki
 on:
   schedule:
       - cron:  '34 */6 * * *'
@@ -17,22 +17,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Get Jekyll Template
         uses: actions/checkout@v4
-      - name: Clone wiki
+      - name: Get wiki content
         run: git clone https://$USERNAME:$PASSWORD@git.dn42.dev/wiki/wiki.git
         env:
           USERNAME: ${{ secrets.DN42_GIT_USERNAME }}
           PASSWORD: ${{ secrets.DN42_GIT_PASSWORD }}
-      - name: Linking files
+      - name: Merge template and wiki content
         run: cp -r wiki/* .
+      - name: Removal of old instructions in robots.txt
+        run: sed -i -e "s|Disallow: /edit/\*||g" -e "s|Disallow: /create/\*||g" -e '/^ *$/d' robots.txt
+      - name: Add the sitemaps to robots.txt
+        run: echo -e "Sitemap: /sitemap.xml\nSitemap: /feed.xml" >> robots.txt
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
       - name: Install jekyll
         run: bundle install
-      - name: Build static side
+      - name: Build static site
         run: bundle exec jekyll build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
