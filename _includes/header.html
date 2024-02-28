@@ -1,2 +1,7 @@
 
 <b>{{ site.title }} / {{ page.title }}</b>
+
+<div id="dn42_header">
+    {% capture sidebar %}{% include header.md %}{% endcapture %}
+    {{ sidebar | markdownify }}
+</div>
