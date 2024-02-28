@@ -17,6 +17,7 @@ permalink: "/:path/:name"
 
 exclude:
   - wiki/
+  - .woodpecker
 
 title: dn42 wiki
 
