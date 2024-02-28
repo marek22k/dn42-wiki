@@ -1,0 +1,28 @@
+steps:
+  - name: build
+    image: debian
+    commands:
+      - apt-get update
+      - apt-get install -y ruby ruby-dev ruby-bundler build-essential git
+      - git config --global user.name "CodeBerg Woodpecker CI"
+      - git config --global user.email woodpecker@codeberg.org
+      - git clone https://$DN42_GIT_USERNAME:$DN42_GIT_PASSWORD@git.dn42.dev/wiki/wiki.git
+      - cp -r wiki/* .
+      - |
+        sed -i -e "s|Disallow: /edit/\*||g" -e "s|Disallow: /create/\*||g" -e '/^ *$/d' robots.txt
+      - |
+        echo -e "Sitemap: /sitemap.xml\nSitemap: /feed.xml" >> robots.txt
+      - bundle install
+      - bundle exec jekyll build
+      - git clone https://$CODEBERG_GIT_USERNAME:$CODEBERG_GIT_PASSWORD@codeberg.org/mark22k/dn42-wiki-public.git
+      - cd dn42-wiki-public
+      - rm -rf *
+      - cp -r ../_site/* .
+      - git add --all
+      - git commit -m "Update wiki"
+      - git push
+    secrets:
+      - codeberg_git_username
+      - codeberg_git_password
+      - dn42_git_username
+      - dn42_git_password
