@@ -18,6 +18,8 @@ steps:
       - cd dn42-wiki-public
       - rm -rf *
       - cp -r ../_site/* .
+      - |
+        echo -e "dn42.obl.ong" >> .domains
       - git add --all
       - git commit -m "Update wiki"
       - git push
