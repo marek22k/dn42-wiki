@@ -4,8 +4,6 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-sitemap
 
-exclude: ["public/", "upstream_docs/"]
-
 defaults:
   -
     scope: { path: "" }
