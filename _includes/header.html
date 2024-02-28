@@ -1,5 +1,6 @@
 
-<b>{{ site.title }} / {{ page.title }}</b>
+{% assign title = page.title | default: page.name | capitalize %}
+<b>{{ site.title }} / {{ title }}</b>
 
 <div id="dn42_header">
     {% capture sidebar %}{% include header.md %}{% endcapture %}
