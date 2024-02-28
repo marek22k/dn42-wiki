@@ -18,3 +18,6 @@
 <link rel="stylesheet" href="/css/style.css" integrity="sha384-rg2IW/gyI7H7S0xHgNOmmWXjk/Sewwymf9d2XHSR7u6HkdUbJm5YoT3Ypf9iN2jz">
 <link rel="stylesheet" href="/css/menu.css" integrity="sha384-l7XKcfUjUvcab7WNmOCt3bhyLA7YFgbEAZcNC8zBiO59n83oQv+FZNRixZZy3eB1">
 
+{% if page.redirect %}<noscript>
+    <meta http-equiv="Refresh" content="0; URL={{ page.redirect }}">
+</noscript>{% endif %}
