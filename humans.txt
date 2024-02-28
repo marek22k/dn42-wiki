@@ -1,1 +1,16 @@
-see /docs/people
+/* AUTHORS */
+    ```
+    git@git.dn42.dev:wiki/wiki.git
+    git shortlog --summary --numbered --email
+    ```
+
+/* THIS MIRROR */
+    Design and deployment: Marek Küthe <m.k@mk16.de>
+
+/* HOSTING */
+    Hosting: GitHub Pages
+    DNS: obl.ong
+
+/* SITE */
+    Language: English
+    Doctype: HTML5
