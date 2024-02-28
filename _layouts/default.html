@@ -10,13 +10,16 @@
 
         <main>
             {{ content }}
-        </main>
-
-        <footer>
-            <div id="menu" class="menu">
-            {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
-            {{ sidebar | markdownify }}
+            <div id="menu-container" class="menu-container">
+                <hr>
+                <div id="menu" class="menu">
+                    {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
+                    {{ sidebar | markdownify }}
+                </div>
             </div>
+        </main>
+        
+        <footer>
             {%- include footer.html -%}
         </footer>
 

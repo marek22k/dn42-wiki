@@ -7,6 +7,8 @@
     border-radius: 10px;
     margin: 20px;
     padding: 0px;
+    top: 0;
+    left: 0;
 
     overflow: auto;
     max-height: 80%;
@@ -32,9 +34,20 @@
     margin: 2px;
 }
 
+.menu hr {
+    display: none;
+}
+
+.menu-container > hr {
+    display: none;
+}
+
 @media only screen and (max-width: 1400px) {
     .menu {
         position: initial;
         max-height: initial;
+    }
+    .menu-container > hr {
+        display: block;
     }
 }
