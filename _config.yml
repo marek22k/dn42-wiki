@@ -2,7 +2,8 @@
 plugins:
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
-  - jekyll-sitemap
+
+url: "https://dn42.obl.ong"
 
 defaults:
   -
@@ -10,9 +11,12 @@ defaults:
       path: ""
     values:
       layout: "page"
+      sitemap: true
 
 permalink: "/:path/:name"
 
+exclude:
+  - wiki/
 
 title: dn42 wiki
 

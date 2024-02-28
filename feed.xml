@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /feed.xml
+---
+{%- capture newline %}
+{% endcapture -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ site.title }}</title>
+    <subtitle>{{ site.description }}</subtitle>
+    <updated>{{ site.time | date_to_rfc822 }}</updated>
+    <link rel="self" href="{{ page.permalink | xml_escape }}" />
+    {% for page in site.pages %}{% if page.feed %}
+    <entry>
+        <title>{{ page.title | xml_escape }}</title>
+        <link rel="alternate" href="{{ page.permalink | xml_escape }}"{% if page.lang %} hreflang="{{ page.lang }}"{% endif %} />
+        <id>{{ site.url }}{{ page.permalink | xml_escape }}</id>
+        <content>
+            {{ page.content | strip_html | replace: newline, " " | slice: 0,250 | xml_escape }}... {{ page.permalink | xml_escape }} {% if page.keywords %}{{ page.keywords | xml_escape }}{% endif %}
+        </content>
+    </entry>
+    {% endif %}{% endfor %}
+</feed>
