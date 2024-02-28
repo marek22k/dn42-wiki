@@ -25,7 +25,7 @@ jobs:
           USERNAME: ${{ secrets.DN42_GIT_USERNAME }}
           PASSWORD: ${{ secrets.DN42_GIT_PASSWORD }}
       - name: Linking files
-        run: ln -s wiki/* .
+        run: cp -r wiki/* .
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
