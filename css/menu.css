@@ -37,7 +37,4 @@
         position: initial;
         max-height: initial;
     }
-    .menu ul li ul {
-        display: none;
-    }
 }

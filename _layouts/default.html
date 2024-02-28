@@ -5,10 +5,6 @@
     <body>
 
         <header>
-            <div id="menu" class="menu">
-            {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
-            {{ sidebar | markdownify }}
-            </div>
             {%- include header.html -%}
         </header>
 
@@ -17,6 +13,10 @@
         </main>
 
         <footer>
+            <div id="menu" class="menu">
+            {% capture sidebar %}{% include sidebar.md %}{% endcapture %}
+            {{ sidebar | markdownify }}
+            </div>
             {%- include footer.html -%}
         </footer>
 
