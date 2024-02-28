@@ -1,6 +1,6 @@
 ---
 permalink: /
-redirect: /Home.html
+redirect: /Home
 ---
 
-Redirecting to [/Home.html](/Home.html).
+Redirecting to [/Home](/Home).
