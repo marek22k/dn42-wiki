@@ -6,11 +6,12 @@ plugins:
 
 defaults:
   -
-    scope: { path: "" }
+    scope:
+      path: ""
     values:
       layout: "page"
 
-permalink: /:path/:name
+permalink: "/:path/:name"
 
 
 title: dn42 wiki
