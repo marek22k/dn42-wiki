@@ -27,9 +27,11 @@ jobs:
       - name: Merge template and wiki content
         run: cp -r wiki/* .
       - name: Removal of old instructions in robots.txt
-        run: sed -i -e "s|Disallow: /edit/\*||g" -e "s|Disallow: /create/\*||g" -e '/^ *$/d' robots.txt
+        run: |
+          sed -i -e "s|Disallow: /edit/\*||g" -e "s|Disallow: /create/\*||g" -e '/^ *$/d' robots.txt
       - name: Add the sitemaps to robots.txt
-        run: echo -e "Sitemap: /sitemap.xml\nSitemap: /feed.xml" >> robots.txt
+        run: |
+          echo -e "Sitemap: /sitemap.xml\nSitemap: /feed.xml" >> robots.txt
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
