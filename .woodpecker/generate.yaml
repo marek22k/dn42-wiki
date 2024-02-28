@@ -20,7 +20,7 @@ steps:
       - rm -rf *
       - cp -r ../_site/* .
       - |
-        echo -e "dn42.obl.ong" >> .domains
+        echo "dn42.obl.ong" >> .domains
       - git add --all
       - git commit -m "Update wiki"
       - git push --force https://$CODEBERG_GIT_USERNAME:$CODEBERG_GIT_PASSWORD@codeberg.org/mark22k/dn42-wiki.git pages
