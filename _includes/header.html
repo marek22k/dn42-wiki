@@ -1,5 +1,6 @@
 
-{% assign title = page.title | default: page.name | capitalize %}
+{% assign default_title = page.name | remove: ".md" | capitalize %}
+{% assign title = page.title | default: default_title %}
 <b>{{ site.title }} / {{ title }}</b>
 
 <div id="dn42_header">
