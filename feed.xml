@@ -10,13 +10,13 @@ permalink: /feed.xml
     <subtitle>{{ site.description }}</subtitle>
     <updated>{{ site.time | date_to_rfc822 }}</updated>
     <link rel="self" href="{{ page.permalink | xml_escape }}" />
-    {% for page in site.pages %}{% if page.feed %}
+    {% for page in site.pages %}{% if page.sitemap %}
     <entry>
         <title>{{ page.title | xml_escape }}</title>
         <link rel="alternate" href="{{ page.permalink | xml_escape }}"{% if page.lang %} hreflang="{{ page.lang }}"{% endif %} />
-        <id>{{ site.url }}{{ page.permalink | xml_escape }}</id>
+        <id>{{ site.url | xml_escape }}{{ page.url | xml_escape }}</id>
         <content>
-            {{ page.content | strip_html | replace: newline, " " | slice: 0,250 | xml_escape }}... {{ page.permalink | xml_escape }} {% if page.keywords %}{{ page.keywords | xml_escape }}{% endif %}
+            {{ page.content | strip_html | replace: newline, " " | slice: 0,250 | xml_escape }}... {{ page.url | xml_escape }} {% if page.keywords %}{{ page.keywords | xml_escape }}{% endif %}
         </content>
     </entry>
     {% endif %}{% endfor %}

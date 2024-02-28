@@ -6,7 +6,7 @@ permalink: /sitemap.xml
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for page in site.pages %}{% if page.sitemap %}
     <url>
-        <loc>{{ site.url }}{{ page.permalink | xml_escape }}</loc>
+        <loc>{{ site.url | xml_escape }}{{ page.url | xml_escape }}</loc>
     </url>
     {% endif %}{% endfor %}
 </urlset>
